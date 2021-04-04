@@ -89,42 +89,6 @@
         </form>
         <div class="text-center">Already have an account? <a href="/registration/login">Log in</a></div>
     </div>
-    <!-- <div class="container" style="width: fit-content;">
-        <div class="row">
-            <div class="Absolute-Center is-Responsive">
-                <div class="card" style="width: fit-content;">
-                    <div class="card text-center" style="height: fit-content;">
-                        <div class="card-body" style="width:fit-content">
-                            <form action="signup" method="post">
-                                {% csrf_token %}
-                                <div class="mb-3">
-                                    <input type="text" name="first_name" placeholder="First Name">
-                                </div>
-                                <div class="mb-3">
-                                    <input type="text" name="last_name" placeholder="Last Name">
-                                </div>
-                                <div class="mb-3">
-                                    <input type="text" name="username" placeholder="Desired username">
-                                </div>
-                                <div class="mb-3">
-                                    <input type="email" name="email" placeholder="Email">
-                                </div>
-                                <div class="mb-3">
-                                    <input type="password" name="password1" placeholder="Enter desired password">
-                                </div>  
-                                <div class="mb-3">
-                                    <input type="password" name="password2" placeholder="Confirm password">
-                                </div>
-                                <div class="mb-3">
-                                <button type="submit" class="btn btn-success">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <div>
         {% for message in messages %}
         <h3> {{message}} </h3>

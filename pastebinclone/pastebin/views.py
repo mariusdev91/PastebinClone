@@ -3,19 +3,10 @@ from django.contrib.auth.models import User
 from datetime import datetime
 from pastebin.models import Pastebin
 
-def checkForUser(request):
-    username = None
-    if request.user.is_authenticated:
-        username = request.user
-        return username
-    else:
-        username = 'guest'
-        return username
-
 def createPaste(request):
     if request.method=='POST':
         title = request.POST['title']
-        user = checkForUser(request)
+        user = request.user
         pastebin = request.POST['pastebin']
         pub_date = datetime.now()
         syntax = request.POST['syntax']
