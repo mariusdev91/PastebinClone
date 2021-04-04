@@ -17,9 +17,6 @@ class Pastebin(models.Model):
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
-    def get_absolute_url(self):
-        return reverse('pastebin-detail', args=[str(self.id)])
-
     def __str__(self):
         return self.syntax
 

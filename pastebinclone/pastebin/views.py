@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from datetime import datetime
 from pastebin.models import Pastebin
@@ -28,3 +28,8 @@ def createPaste(request):
 def pastebins(request):
     pastebins = Pastebin.objects.order_by('-pub_date')[:10]
     return render(request, "pastebins.html", {"pastebins": pastebins})
+
+def pastebinDetails(request, pastebin_id):
+    pastebin = get_object_or_404(Pastebin, pk=pastebin_id)
+    return render(request, "pastebin/pastedetail.html", {'pastebin': pastebin})
+
