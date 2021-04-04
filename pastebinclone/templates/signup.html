@@ -62,7 +62,8 @@
         </div>
     </nav>
     <div class="signup-form">
-        <form action="/examples/actions/confirmation.php" method="post">
+        <form action="signup" method="post">
+            {% csrf_token %}
             <h2>Register</h2>
             <p class="hint-text">Create your account. It's free and only takes a minute.</p>
             <div class="form-group">
@@ -87,9 +88,9 @@
                 <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
             </div>
         </form>
-        <div class="text-center">Already have an account? <a href="/registration/login">Log in</a></div>
+        <div class="text-center"> Already have an account? <a href="/registration/login">Log in</a></div>
     </div>
-    <div>
+    <div style="text-align: center;">
         {% for message in messages %}
         <h3> {{message}} </h3>
         {% endfor %}
